@@ -1,0 +1,124 @@
+/* Base styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-color: rgb(60, 66, 0);
+}
+header {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    background-color: black;
+}
+/* Logo section */
+.logo {
+    flex-grow: 4;
+    margin-left: 3rem;
+}
+.logo img {
+    max-width: 4rem;
+}
+/* Title section */
+.title-container {
+    flex-grow: 12;
+    text-align: center;
+}
+.title {
+    display: inline-block;
+    height: 3rem;
+    width: 10rem;
+    border-radius: 3rem;
+    line-height: 3rem;
+    color: #000;
+    background-color: #fff;
+}
+/* Navigation styles */
+nav {
+    background-color: #ffffff; /* Dark background for the nav */
+    padding: 1rem 1rem; /* Padding for spacing */
+    border-radius: 0.7rem; /* Rounded corners */
+    margin-right: 1rem;
+}
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-around; /* Space out the items */
+}
+.nav-links li {
+    position: relative; /* Position for hover effects */
+}
+.nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: #000000; /* White text color */
+    padding: 0.5rem 1rem; /* Padding for clickable area */
+    margin: 1rem 0.1rem;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    border-radius: 0.7rem; /* Rounded corners */
+}
+.nav-links a:hover {
+    background-color: #000000; /* Darker background on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 3rem;
+    height: auto;
+    width: auto;
+}
+.menu-icon div {
+    width: 2.2rem;
+    height: 0.25rem;
+    background-color: white;
+    margin: 0.25rem 0rem;
+    transition: all 0.3s ease;
+}
+
+.menu-icon.toggle .bar-1 {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+.menu-icon.toggle .bar-2 {
+    opacity: 0;
+}
+.menu-icon.toggle .bar-3 {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+/* Responsive Web */
+@media (max-width: 1080px){ 
+    .logo {
+        flex-grow: 0;
+    }
+    .title-container {
+        flex-grow: 1;
+    }
+    nav{
+        display: flex;
+        position: fixed;
+        top: 10vh;
+        right: -35vw;
+        height: 20vh;
+        margin-right: 0;
+        transition: right 0.3s ease;
+    }
+    .nav-links {
+        display: flex; 
+        flex-direction: column;
+    }
+    .nav-active{
+        display: flex;
+        transition: right 0.3s ease;
+        right: 0;
+        height: 20vh;
+        margin-right: 0; 
+    }
+    .menu-icon {
+        display: flex;
+    }
+}
